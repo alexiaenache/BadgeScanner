@@ -46,7 +46,7 @@ void showTotalNumber()
     lcd.setCursor(0, 1);          // Move cursor to the start of the second line
     lcd.print(uidCount);          // Print the total number of members registered
 
-    // Wait here until user pushes joystick up to exit this screen
+    // Wait here until member pushes joystick up to exit this screen
     while (true)
     {
         int joyY = analogRead(JOYSTICK_URX_PIN); // Read vertical joystick position
@@ -55,15 +55,15 @@ void showTotalNumber()
         if (joyY > UPPER_JOYSTICK_THRESHOLD)
         {
             lcd.clear();             // Clear LCD before exiting
-            lcd.print("Exiting..."); // Inform user we are exiting the screen
-            delay(1000);             // Wait a moment to allow user to see the message
+            lcd.print("Exiting..."); // Inform member we are exiting the screen
+            delay(1000);             // Wait a moment to allow member to see the message
             return;                  // Exit the function and return to previous menu/state
         }
         delay(100); // Small delay to reduce CPU usage during wait loop
     }
 }
 
-// Function to display an idle message on the LCD when the system is waiting for user action.
+// Function to display an idle message on the LCD when the system is waiting for member action.
 // Alternates every 4 seconds between prompting to scan a card and showing the count of logged-in members.
 void printIdle()
 {
@@ -81,7 +81,7 @@ void printIdle()
 
         if (showScanMessage)
         {
-            lcd.print("Scan Card"); // Prompt user to scan a card
+            lcd.print("Scan Card"); // Prompt member to scan a card
         }
         else
         {
