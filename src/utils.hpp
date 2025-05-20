@@ -51,7 +51,7 @@
 #define DHTPIN 13     // Pin connected to the DHT11 sensor
 #define DHTTYPE DHT11 // Define the type of DHT sensor
 
-// User struct
+// Member struct
 struct user
 {
     String uid;
